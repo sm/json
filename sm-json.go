@@ -114,7 +114,6 @@ func main() {
           }
         }
       default:
-        log.Fatal("ERROR: Error with value x", v)
       }
       if(len(value) > 0) {
         break
