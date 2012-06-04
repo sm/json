@@ -1,21 +1,18 @@
-  NAME
+    NAME
 
-  sm-json - find variable in json file
+    sm-json - find variable in json file
 
-  SYNOPSIS
+    SYNOPSIS
 
-  Usage of ./sm-mustache:
-    -path="{path}": path to value
-    -uri="{uri}": json uri or path to file
+    sm-json [options]
 
-    -uri|--uri "{uri}"
-      
-      specify the json file to use
+    OPTIONS
+      -path="{path}"        path to retrieve value from
+      -path|--path "{path}" path to retrieve value from
+      -uri="{uri}"          json uri (url or path to file)
+      -uri|--uri "{uri}"    json uri (url or path to file)
 
-    -path|--path "{path}"
+    DESCRIPTION
 
-      specify the path to variable
-   
-  DESCRIPTION
+    Opens a json file from --uri and returns the value found at the given --path
 
-  sm-json will read the given json file and get value. 
