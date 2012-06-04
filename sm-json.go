@@ -63,22 +63,23 @@ func main() {
 	flag.Parse()
 
 	if *uri == "{uri}" {
-		log.Fatalf("ERROR: A template file must be given! %s", *uri)
+		log.Fatal("ERROR: A json file location must be specified for reading using --uri={{uri}}")
 	} else {
 		file, err := os.Open(*uri)
 		if err != nil {
-			log.Fatalf("ERROR: The json file %s cannot be opened.", *uri)
+			log.Fatalf("ERROR: The json file at '%s' cannot be opened", *uri)
 		}
+
 		bfile := bufio.NewReader(file)
 		buf, err := ioutil.ReadAll(bfile)
 		if file == nil && err != nil {
-			log.Fatalf("ERROR: The json file %s does not exist!", *uri)
+			log.Fatalf("ERROR: A json does not exist at '%s'", *uri)
 		}
 
 		json_err := json.Unmarshal(buf, &f)
 
 		if json_err != nil {
-			log.Fatal("ERROR: unable to read json file")
+			log.Fatalf("ERROR: Unable to parse json file located at '%s'", *uri)
 		}
 
 		// Parse path
