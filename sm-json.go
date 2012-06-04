@@ -89,7 +89,7 @@ func main() {
 				if len(path_array) == i+1 {
 					value = v
 				} else {
-					log.Fatal("ERROR: Found value too soon")
+					log.Fatalf("ERROR: Unable to traverse the full path before encoutering a value at '%s'.", v)
 				}
 			case map[string]interface{}:
 				if len(path_array) == i+1 {
